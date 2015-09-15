@@ -340,6 +340,50 @@ fn main() {
 ```
 
 ---
+class: middle
+
+```cpp
+struct Foo;
+struct Qux;
+
+impl Bar for Foo { // ...
+impl Bar for Qux { // ...
+
+fn hello<T: Bar>(f: T) { // ...
+
+fn main() {
+    let f = Foo;
+    hello(f);
+
+    let q = Qux;
+    hello(q);
+}
+```
+
+---
+class: middle
+
+# Monomorphization
+
+```cpp
+fn hello_foo(f: Foo) { // ...
+fn hello_qux(f: Qux) { // ...
+
+fn main() {
+    let f = Foo;
+    hello_foo(f);
+
+    let q = Qux;
+    hello_qux(q);
+}
+```
+
+---
+class: middle
+
+![30 lines of assembly](public/img/lines30.JPG)
+
+---
 class: middle, center
 
 ![flexibility and performance](public/img/flex_perf.JPG)
