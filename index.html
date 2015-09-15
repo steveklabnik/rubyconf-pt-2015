@@ -211,7 +211,7 @@ class Foo
 end
 
 f = Foo.new
-f.hello()
+f.hello
 ```
 
 ---
@@ -251,6 +251,93 @@ class: middle, center
 class: middle
 
 ![30 lines of assembly](public/img/lines30.JPG)
+
+---
+class: middle, center
+
+![ruby](public/img/ruby.JPG)
+
+---
+class: middle
+
+```ruby
+module Bar
+  def hello
+    "bar"
+  end
+end
+
+class Foo
+  include Bar
+end
+
+f = Foo.new
+f.hello
+```
+
+---
+class: middle, center
+
+![rust](public/img/rust3.JPG)
+
+---
+class: middle
+
+```cpp
+struct Foo;
+
+trait Bar {
+    fn hello(&self) -> &str;
+}
+
+impl Bar for Foo {
+    fn hello(&self) -> &str {
+        "hello"
+    }
+}
+
+fn main() {
+    let f = Foo;
+    f.hello();
+}
+```
+
+---
+class: middle, center
+
+![ruby](public/img/ruby.JPG)
+
+---
+class: middle
+
+```ruby
+def hello(f)
+  f.hello
+end
+
+f = Foo.new
+
+hello(f)
+```
+
+---
+class: middle, center
+
+![rust](public/img/rust3.JPG)
+
+---
+class: middle
+
+```cpp
+fn hello<T: Bar>(f: T) {
+    f.hello();
+}
+
+fn main() {
+    let f = Foo;
+    hello(f);
+}
+```
 
 ---
 class: middle, center
